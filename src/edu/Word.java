@@ -6,7 +6,10 @@ public class Word {
     private String value;
 
     public Word(String value) {
-        this.value = value;
+        if (value != null)
+            this.value = value;
+        else
+            this.value = "";
     }
 
     public String getValue() {
@@ -20,7 +23,7 @@ public class Word {
         Word word = (Word) o;
         if (word.value != null && this.value != null)
             return value.equals(word.value);
-         else return word.value == null && this.value == null;
+        else return word.value == null && this.value == null;
     }
 
     @Override

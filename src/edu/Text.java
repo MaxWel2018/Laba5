@@ -6,15 +6,21 @@ public class Text {
     private String header;
     private String body = "";
 
-     Text(Word word) {
-        header = word.getValue();
+    Text(Word word) {
+        if (word != null)
+            header = word.getValue();
+        else
+            header = "";
     }
 
-     Text(Phrase phrase) {
-        header = phrase.getValue();
+    Text(Phrase phrase) {
+        if (phrase != null)
+            header = phrase.getValue();
+        else
+            header = "";
     }
 
-     String getHeader() {
+    String getHeader() {
         return header;
     }
 
@@ -23,12 +29,11 @@ public class Text {
     }
 
 
-
     void addBody(Phrase phrase) {
         body += " " + phrase.getValue();
     }
 
-     String getBody() {
+    String getBody() {
         return body;
     }
 
